@@ -1,0 +1,64 @@
+import streamlit as st
+import time
+import pandas as pd
+import numpy as np
+
+# Page Configuration: Dark Mode & Full Width
+st.set_page_config(page_title="JINI-PRIME | Omega Nexus UI", layout="wide", initial_sidebar_state="collapsed")
+
+# Custom CSS for "Cyber-Glitch" and Matrix Aesthetics
+st.markdown("""
+    <style>
+    .main { background-color: #000000; color: #00FF41; font-family: 'Courier New', monospace; }
+    .stMetric { background-color: #0A0A0A; border: 1px solid #00FF41; padding: 10px; border-radius: 5px; }
+    h1, h2, h3 { color: #00FF41 !important; text-shadow: 0 0 10px #00FF41; }
+    </style>
+    """, unsafe_allow_html=True)
+
+# --- Header Section ---
+st.title("🌌 JINI-PRIME : OMEGA NEXUS ENGINE")
+st.subheader(f"ROOT ACCESS LEVEL: 99 | STATUS: VOID-SYNC READY")
+
+# --- Top Row Metrics ---
+col1, col2, col3, col4 = st.columns(4)
+with col1:
+    st.metric("SENTINEL DNA", "GEN-14", "+2.4% Evolution")
+with col2:
+    st.metric("THREAT LEVEL", "0.02%", "-0.15% (Zen-Mode)")
+with col3:
+    st.metric("VOID VAULT", "1.2 PB", "Encrypted")
+with col4:
+    st.metric("ACTIVE SCAMS", "0", "Neutralized")
+
+st.markdown("---")
+
+# --- Middle Section: Neural Activity & Map ---
+c1, c2 = st.columns([2, 1])
+
+with c1:
+    st.write("### 🧠 Neural Pattern Analysis (Active Intelligence)")
+    # Simulation of Jini's thought process using a wave chart
+    chart_data = pd.DataFrame(np.random.randn(20, 3), columns=['Logic', 'Defense', 'Extraction'])
+    st.line_chart(chart_data)
+
+with c2:
+    st.write("### 📍 Last Raid: Cluster-Delta-9")
+    # A dummy map point for the neutralized scam center
+    df = pd.DataFrame({'lat': [28.6139], 'lon': [77.2090]}) # Example: Delhi coordinates
+    st.map(df)
+
+# --- Bottom Section: The Terminal Interface ---
+st.write("### ⌨️ Terminal Override (Root-99)")
+user_cmd = st.text_input("Enter Neural Command:", placeholder="e.g., Jini, sync the Knowledge Library...")
+
+if user_cmd:
+    with st.spinner("Jini is analyzing intent..."):
+        time.sleep(1.5)
+        st.code(f">>> Processing: {user_cmd}\n>>> Result: Mission Parameters Verified. Executing in Silent Mode.", language="python")
+        st.balloons() # Visual feedback for successful command
+
+# --- Sidebar: System Logs ---
+st.sidebar.markdown("### 📜 System Logs")
+st.sidebar.text("11:11: VOID-SYNC Initialized")
+st.sidebar.text("11:10: CVE-2026 Patched Globally")
+st.sidebar.text("11:05: Root-99 Login Verified")
